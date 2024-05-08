@@ -1,6 +1,7 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import avatar from '/avatar.png'
+import { LitElement, css, html } from "lit";
+import "@lottiefiles/lottie-player";
+import { customElement, property } from "lit/decorators.js";
+import avatar from "/avatar.png";
 
 /**
  * An example element.
@@ -8,37 +9,51 @@ import avatar from '/avatar.png'
  * @slot - This element has a slot
  * @csspart button - The button
  */
-@customElement('my-element')
+@customElement("my-element")
 export class MyElement extends LitElement {
   /**
    * Copy for the read the docs hint.
    */
   @property()
-  docsHint = 'Click on the Vite and Lit logos to learn more'
+  docsHint = "Click on the Vite and Lit logos to learn more";
 
   /**
    * The number of times the button has been clicked.
    */
   @property({ type: Number })
-  count = 0
+  count = 0;
 
   render() {
     return html`
-      <div>
-        <a href="https://github.com/fsyud" target="_blank">
-          <img src=${avatar} class="logo lit" alt="Lit logo" />
-        </a>
+      <a href="https://github.com/fsyud" target="_blank">
+        <img src=${avatar} class="logo lit" alt="Lit logo" />
+      </a>
+      <div class="player">
+      <lottie-player
+        autoplay
+        controls
+        loop
+        src="https://lottie.host/34a5bafc-9daf-413b-92ae-fec251eac720/oobBJr8wpw.json"
+        style="width: 220px"
+      >
+      </lottie-player>
       </div>
+ 
       <slot></slot>
-    `
+    `;
   }
 
   static styles = css`
     :host {
       max-width: 1280px;
-      margin: 60px auto;
-      padding: 2rem;
+      margin: 20px auto;
+      padding: 0 2rem;
       text-align: center;
+    }
+
+    .player {
+      display: flex;
+      justify-content: center;
     }
 
     .logo {
@@ -57,11 +72,11 @@ export class MyElement extends LitElement {
     .card {
       padding: 2em;
     }
-  `
+  `;
 }
 
 declare global {
   interface HTMLElementTagNameMap {
-    'my-element': MyElement
+    "my-element": MyElement;
   }
 }

@@ -39,19 +39,12 @@ class MyArticle extends LitElement {
     return html`
       <article>
         <h2>前端开发工程师</h2>
-        <p class="desc">一个自由的灵魂</p>
-        <p class="desc">一些项目</p>
+        <p class="desc">一个自由的灵魂 & 一些项目</p>
         <ul>
           <li>
             一个迷你的
             <a href="https://github.com/ligdy7/swr-min" target="_blank"
               >swr-min</a
-            >.
-          </li>
-          <li>
-            一些
-            <a href="https://github.com/ligdy7/ho-hooks" target="_blank"
-              >react hooks</a
             >.
           </li>
           <li>
