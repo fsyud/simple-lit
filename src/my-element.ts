@@ -25,21 +25,27 @@ export class MyElement extends LitElement {
 
   render() {
     return html`
-      <a href="https://github.com/fsyud" target="_blank">
-        <img src=${avatar} class="logo lit" alt="Lit logo" />
-      </a>
-      <div class="player">
-      <lottie-player
-        autoplay
-        controls
-        loop
-        src="https://lottie.host/34a5bafc-9daf-413b-92ae-fec251eac720/oobBJr8wpw.json"
-        style="width: 220px"
-      >
-      </lottie-player>
-      </div>
- 
-      <slot></slot>
+      <main class="yu-main">
+        <article>
+          <a href="https://github.com/fsyud" target="_blank">
+            <img src=${avatar} class="logo lit" alt="Lit logo" />
+          </a>
+          <div class="player">
+            <lottie-player
+              autoplay
+              controls
+              loop
+              src="https://lottie.host/34a5bafc-9daf-413b-92ae-fec251eac720/oobBJr8wpw.json"
+              style="width: 220px"
+            >
+            </lottie-player>
+          </div>
+        </article>
+
+        <main class="content">
+          <slot></slot>
+        </main>
+      </main>
     `;
   }
 
@@ -49,6 +55,12 @@ export class MyElement extends LitElement {
       margin: 20px auto;
       padding: 0 2rem;
       text-align: center;
+    }
+
+    .yu-main {
+      display: flex;
+      justify-content: space-between;
+      gap: 60px;
     }
 
     .player {
@@ -71,6 +83,10 @@ export class MyElement extends LitElement {
 
     .card {
       padding: 2em;
+    }
+
+    .content {
+      margin-left: 24px;
     }
   `;
 }
